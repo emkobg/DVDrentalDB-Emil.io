@@ -1,5 +1,5 @@
 ## DSSA 5102 Final Project 
-## byEmil Bobev
+## by Emil Bobev
 ---
 
 ## __About Emilio__
