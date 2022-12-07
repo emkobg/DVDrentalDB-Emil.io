@@ -1,4 +1,5 @@
-## Emilio - a easyer way to organize your DVD's
+## DSSA 5102 Final Project 
+## byEmil Bobev
 ---
 
 ## __About Emilio__
