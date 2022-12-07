@@ -1,5 +1,4 @@
-
-# dssa_dw_final_project_emkobg
+## Emilio - a easyer way to organize your DVD's
 ---
 
 ## __About Emilio__
