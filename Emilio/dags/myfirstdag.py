@@ -4,7 +4,7 @@ from matplotlib import pyplot as plt
 
 #creating dependencies   
 graph = nx.DiGraph()
-graph.add_edges_from([("connectiontask", "storetask"),("connectiontask", "filmtask"), ("connectiontask", "customertask"), ("connectiontask", "datetask"), ("connectiontask", "stafftask"), ("stafftask", "factrentalstask"),("datetask", "factrentalstask"), ("storetask", "factrentalstask"),("customertask", "factrentalstask"),("filmtask", "factrentalstask"),("stafftask", "factrentalstask"),("storetask", "factrentalstask"),("factrentalstask","demolitiontask"),("demolitiontask", "disconnectstask")])
+graph.add_edges_from([("Connect", "Store"),("Connect", "Film"), ("Connect", "Customer"), ("Connect", "Date"), ("Connect", "Staff"), ("Staff", "Fact_Rentals"),("Date", "Fact_Rentals"), ("Store", "Fact_Rentals"),("Customer", "Fact_Rentals"),("Film", "Fact_Rentals"),("Staff", "Fact_Rentals"),("Store", "Fact_Rentals"),("Fact_Rentals","Demolition"),("Demolition", "Disconnect")])
 
 #creating a graphical representation of my dependencies 
 plt.figure()
