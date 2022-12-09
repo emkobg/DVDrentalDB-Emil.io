@@ -66,7 +66,7 @@ def fact_rentals(cur,conn):
   
     run_sql(sql,cur,conn)
     run_sql(sql2,cur,conn)
-    
+    print("Fact_Rental Tables created")   
  
 #defining a function that removes all tables
 def demolition(cur,conn):
@@ -84,11 +84,13 @@ def demolition(cur,conn):
     run_sql(sql4,cur,conn)
     run_sql(sql5,cur,conn)
     print("Demolition completed")
+   
 
 #Defines a funcition that closes the connection, once all tables are deleted. 
 def disconnect(cur,conn):
     cur.close()
     conn.close()
+    print("Disconnect")    
 
 #creting tasks
 
@@ -118,7 +120,16 @@ queue.append(demolitiontask)
 queue.append(disconnecttask)
 
 
-#creating a worker, that executes given que. Laboror is a function that takes in the queue        
+queue2 = [] #creates an empty queue
+queue2.append(connectiontask) #
+queue2.append(customertask)    
+queue2.append(datetask)
+queue2.append(filmtask)
+queue2.append(storetask)
+queue2.append(stafftask)
+queue2.append(factrentalstask)
+
+#creating a worker, that executes given que. Laborer is a function that takes in the queue        
 def laborer(queue):
     counter = 0
     for task in queue: #for each element in the queue which needs to be tasks
@@ -132,12 +143,15 @@ def laborer(queue):
     
 #creating scheduller that would run the queue every 15 seconds
 
+laborer(queue2)
+"""
 schedule.every(15).seconds.do(laborer,queue) #this schedule makes the worker execute a queue every 15 seconds
 
 while True: #
     schedule.run_pending()
     time.sleep(5)
-    
-    
+    """
+
+
     
 
